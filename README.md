@@ -35,6 +35,10 @@ For some sanity checking of the data, we can create a plot of the latitude and l
 ```{r}
 plot(fatheadData$geopoint.lat,fatheadData$geopoint.lon)
 ```
+![alt text](https://www.idigbio.org/sites/default/files/sites/default/files/spotlight/coding-examples/data-exploration.png "Figure 1")
+
+
+
 
 And see what data is present in the "country" and "stateprovince" columns:
 
@@ -64,17 +68,9 @@ write.csv(cleanedData, file="idigbio-fathead-data-yyyymmdd.csv",row.names=FALSE)
 
 As an excercise for the reader, can you recreate the following map with the concepts presented above?
 
-```{r, echo=FALSE, message=FALSE}
-library(rworldmap)
-newmap <- getMap(resolution="low")
-latMin <-head(sort(floor(as.numeric(unique(cleanedData$geopoint.lat)))), n=1)
-latMax <-tail(sort(floor(as.numeric(unique(cleanedData$geopoint.lat)))), n=1)
-lonMin <-head(sort(floor(as.numeric(unique(cleanedData$geopoint.lon)))), n=1)
-lonMax <-tail(sort(floor(as.numeric(unique(cleanedData$geopoint.lon)))), n=1)
-plot(newmap, ylim=c(latMin,latMax), xlim=c(lonMin,lonMax), asp=1, main="pimephales promelas in iDigBio")
-points(cleanedData$geopoint.lon,cleanedData$geopoint.lat, col='red',cex=.3)
+![alt text](https://www.idigbio.org/sites/default/files/sites/default/files/spotlight/coding-examples/idigbio-pimephales-promelas-dist-map.png "Figure 2")
 
-```
+
 
 
 

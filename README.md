@@ -1,3 +1,6 @@
+This month's coding corner will introduce readers to R programming and utilizing the iDigBio Search API for querying specimen data.
+
+
 We're going to need a little help installing iDigBio's R library, so lets start there:
 
 ```{r, eval=FALSE}

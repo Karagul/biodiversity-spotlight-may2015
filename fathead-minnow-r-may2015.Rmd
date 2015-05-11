@@ -1,17 +1,19 @@
 We're going to need a little help installing iDigBio's R library, so lets start there:
 
-```{r}
+```{r, eval=FALSE}
 install.packages("devtools")
 library(devtools)
 ```
 
 Now we can use the function install_github to install iDigBio's R library and then load it into memory:
 
-```{r}
+```{r, eval=FALSE}
 install_github("idigbio/ridigbio")
 library(ridigbio)
 ```
-
+```{r, echo=FALSE}
+library(ridigbio)
+```
 
 
 Let's take a look at this month's biodiversity spotlight, the fathead minnow, "pimephales promelas", in iDigBio by creating a dataframe using the function idig_search_records:
